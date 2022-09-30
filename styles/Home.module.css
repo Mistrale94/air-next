@@ -67,10 +67,23 @@
 
 .profils_detail {
     width: 100%;
+    max-width: 1440px;
+    border-bottom: 1px solid #acacac;
+    display: flex;
+    padding: 50px 0;
 }
 
-.profils_detail {
-    border-bottom: 1px solid #acacac;
+.profils_detail img {
+    width: 200px;
+    min-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profils_detail img:last-child {
+    margin-right: 0px;
 }
 
 .profils_detail:last-child {
@@ -79,6 +92,17 @@
 
 .profils_detail h2 {
     color: #0070f3;
+}
+
+.profils_detail__left {
+    display: flex;
+    width: 220px;
+    overflow-x: scroll;
+    overflow-x: auto;
+}
+
+.profils_detail__right {
+    margin-left: 50px;
 }
 
 .title,
