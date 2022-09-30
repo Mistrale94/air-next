@@ -2,8 +2,11 @@ import Head from 'next/head'
 import Header from '../components/Header-exemple'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import {table, minifyRecords} from './api/utils/Airtable';
+import Todo from '../components/Todo';
 
-export default function Home() {
+export default function Home(initialTodos) {
+  console.log(initialTodos);
   return (
     <div className={styles.container}>
       <Header/>
@@ -15,9 +18,14 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        
         <h1 className={styles.title}>
           Bienvenue sur <a href="#">Air-Next</a>
         </h1>
+        
+        {initialTodos.initialTodos.map((todo) => (
+          <Todo key={todo.id} todo={todo} />
+        ))}
 
         {/* <p className={styles.description}>
           Get started by editing{' '}
@@ -69,4 +77,23 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+
+export async function getServerSideProps(context) {
+  try{
+    const todos = await table.select({}).firstPage();
+    return {
+      props: {
+        initialTodos: minifyRecords(todos)
+      }
+    }
+  }catch(err){
+    console.error(err)
+    return{
+      props: {
+        err: "Aucune données trouvées"
+      }
+    }
+  }
 }

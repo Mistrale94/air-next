@@ -3,8 +3,9 @@ import Image from 'next/image'
 import Feed from '../components/Feed'
 import Header from '../components/Header'
 import styles from '../styles/Home.module.css'
+import { minifyRecords } from './pages/api/utils/Airtable'
 
-export default function Home() {
+export default function Home(initialTodos) {
   return (
     <div>
       <Head>
@@ -16,7 +17,6 @@ export default function Home() {
       <Header/>
 
       <Feed/>
-      
     </div>
-  )
+  );
 }
