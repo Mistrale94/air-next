@@ -22,7 +22,7 @@ export default function Home(initialTodos) {
         <h1 className={styles.title}>
           Bienvenue sur <a href="#">Air-Next</a>
         </h1>
-        
+
         {initialTodos.initialTodos.map((todo) => (
           <Todo key={todo.id} todo={todo} />
         ))}
