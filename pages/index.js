@@ -17,7 +17,9 @@ export default function Home(initialTodos) {
       </Head>
 
       <main className={styles.main}>
-        
+
+      <iframe src="https://airtable.com/embed/shrMvRsBT0jLe52o8?backgroundColor=blue" frameborder="0" onmousewheel=""></iframe>
+
         <h1 className={styles.title}>
           Bienvenue sur <a href="#">Air-Next</a>
         </h1>
