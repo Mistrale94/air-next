@@ -7,13 +7,13 @@ import Link from 'next/link'
 export default function Header() {
   return (
     <div className={styles.header}>
-        <nav>
-          <Link href="/Works">
+        {/* <nav>
+          <Link href="/profils">
             <a>Home <span className={styles.icon}><PlusCircleIcon/></span></a>
           </Link>
-          <a href="#">Works</a>
+          <a href="#">profils</a>
           <a href="#">Contact</a>
-        </nav>
+        </nav> */}
     </div>
   )
 }

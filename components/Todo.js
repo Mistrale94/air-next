@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from '../styles/Home.module.css'
 
 export default function Todo({todo}) {
   return (
-    <div>
+    <div className={styles.profils_detail}>
         <h2>{todo.fields.Name}</h2>
         <strong>{todo.fields.Phone}</strong>
         <p>{todo.fields.Description}</p>
